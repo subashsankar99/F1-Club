@@ -24,8 +24,10 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container py-8">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* ADDED mx-auto here to center the container on the screen */}
+          <div className="container mx-auto py-8">
+            {/* CHANGED md:grid-cols-4 to md:grid-cols-3 so the 3 items are centered evenly */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="font-bold text-lg mb-4">F1 Racing</h3>
                 <p className="text-sm text-muted-foreground">
@@ -35,15 +37,12 @@ export default function RootLayout({
               <div>
                 <h4 className="font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  {/* FIXED: Removed /F1-Club prefix because basePath handles it */}
                   <li><Link href="/teams" className="hover:text-foreground">Teams</Link></li>
                   <li><Link href="/drivers" className="hover:text-foreground">Drivers</Link></li>
                   <li><Link href="/circuits" className="hover:text-foreground">Circuits</Link></li>
                 </ul>
               </div>
               
-              
-
               <div>
                 <h4 className="font-semibold mb-4">Follow Us</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
