@@ -2,8 +2,11 @@
 const nextConfig = {
   // 1. REQUIRED: Tells Next.js to generate static HTML files for GitHub Pages
   output: 'export', 
+  
+  // 2. REQUIRED: matches your GitHub Repository name exactly
+  basePath: "/F1-Club",
 
-  // 2. REQUIRED: Disables the Image Optimization API (which doesn't work on GitHub Pages)
+  // 3. REQUIRED: Disables the Image Optimization API (which doesn't work on GitHub Pages)
   images: {
     unoptimized: true, 
     remotePatterns: [
