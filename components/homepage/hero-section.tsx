@@ -12,12 +12,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-// --- DATA ---
+// --- DATA: Paths matched exactly to your Screenshot ---
 const HIGHLIGHT_VIDEOS = [
   {
     id: "1",
     title: "F1 Highlights",
-    src: "/videos/highlights/video1.mp4", 
+    src: "/videos/highlights/video1.mp4", // Matches public/videos/highlights/video1.mp4
   },
   {
     id: "2",
@@ -42,27 +42,25 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-black">
       
-      {/* BACKGROUND VIDEO (Mobile Fix) */}
-      <div 
-        className="absolute inset-0 z-0"
-        dangerouslySetInnerHTML={{
-          __html: `
-            <video
-              autoplay
-              loop
-              muted
-              playsinline
-              preload="auto"
-              class="w-full h-full object-cover opacity-40 pointer-events-none select-none"
-            >
-              <source src="/videos/f1-hero.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          `
-        }}
-      />
+      {/* --- BACKGROUND VIDEO --- */}
+      <div className="absolute inset-0 z-0">
+        {/* 
+           We use standard HTML video tag here. 
+           muted + autoPlay is required for browsers to allow background video.
+        */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover opacity-40 pointer-events-none"
+        >
+          {/* Path matches public/videos/f1-hero.mp4 */}
+          <source src="/videos/f1-hero.mp4" type="video/mp4" />
+        </video>
+      </div>
       
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent pointer-events-none" />
 
@@ -83,7 +81,7 @@ const HeroSection = () => {
 
           <div className="flex gap-4 justify-center flex-wrap">
             
-            {/* --- WATCH HIGHLIGHTS (FULL SIZE MODAL) --- */}
+            {/* --- WATCH HIGHLIGHTS (MODAL) --- */}
             <Dialog>
               <DialogTrigger asChild>
                 <Button size="lg" className="bg-red-600 hover:bg-red-700">
@@ -92,12 +90,6 @@ const HeroSection = () => {
                 </Button>
               </DialogTrigger>
               
-              {/* 
-                  UPDATED DIALOG CONTENT:
-                  - w-[95vw] h-[90vh]: Almost full screen width/height
-                  - max-w-none: Removes the default width limit
-                  - flex flex-col: Allows us to manage the layout inside
-              */}
               <DialogContent className="w-[95vw] h-[90vh] max-w-none bg-black/95 border-red-900 text-white flex flex-col p-0 gap-0">
                 
                 {/* Header */}
@@ -108,14 +100,19 @@ const HeroSection = () => {
                   </DialogTitle>
                 </DialogHeader>
                 
-                {/* Body: Flex layout for Desktop (Side-by-side) and Mobile (Stacked) */}
+                {/* Body */}
                 <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
                   
-                  {/* 1. VIDEO PLAYER AREA (Takes available space) */}
+                  {/* 1. VIDEO PLAYER AREA */}
                   <div className="flex-1 bg-black/50 flex items-center justify-center p-4 bg-[#050505]">
                     <div className="w-full h-full relative flex items-center justify-center rounded-lg overflow-hidden border border-white/10">
+                      {/* 
+                          IMPORTANT: key={currentVideo.id} tells React to destroy 
+                          and recreate this video tag when the ID changes. 
+                          This fixes the issue where the video wouldn't change.
+                      */}
                       <video
-                        key={currentVideo.id} 
+                        key={currentVideo.id}
                         controls
                         autoPlay
                         className="max-w-full max-h-full w-auto h-auto object-contain shadow-2xl"
@@ -126,7 +123,7 @@ const HeroSection = () => {
                     </div>
                   </div>
 
-                  {/* 2. PLAYLIST SIDEBAR (Fixed width on desktop, scrollable) */}
+                  {/* 2. PLAYLIST SIDEBAR */}
                   <div className="w-full md:w-80 border-l border-white/10 bg-[#0a0a0a] p-4 flex flex-col gap-3 overflow-y-auto">
                     <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
                       Up Next
