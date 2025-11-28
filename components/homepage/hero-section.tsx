@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Play, CalendarDays, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,12 +12,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-// --- DATA: Paths matched exactly to your Screenshot ---
+// --- DATA ---
 const HIGHLIGHT_VIDEOS = [
   {
     id: "1",
     title: "F1 Highlights",
-    src: "/videos/highlights/video1.mp4", // Matches public/videos/highlights/video1.mp4
+    src: "/videos/highlights/video1.mp4", 
   },
   {
     id: "2",
@@ -33,6 +33,34 @@ const HIGHLIGHT_VIDEOS = [
 
 const HeroSection = () => {
   const [currentVideo, setCurrentVideo] = useState(HIGHLIGHT_VIDEOS[0]);
+  
+  // Refs to control the videos directly
+  const bgVideoRef = useRef<HTMLVideoElement>(null);
+  const modalVideoRef = useRef<HTMLVideoElement>(null);
+
+  // 1. FORCE BACKGROUND VIDEO TO PLAY
+  useEffect(() => {
+    const bgVideo = bgVideoRef.current;
+    if (bgVideo) {
+      // Browsers require these specific settings to allow autoplay
+      bgVideo.muted = true;
+      bgVideo.defaultMuted = true;
+      bgVideo.playsInline = true;
+      
+      // Try to play, catch any browser errors
+      bgVideo.play().catch((error) => {
+        console.log("Background video autoplay blocked:", error);
+      });
+    }
+  }, []);
+
+  // 2. RELOAD MODAL VIDEO WHEN SWITCHING
+  useEffect(() => {
+    if (modalVideoRef.current) {
+      modalVideoRef.current.load();
+      modalVideoRef.current.play().catch(e => console.log("Modal play error:", e));
+    }
+  }, [currentVideo]);
 
   const scrollToSchedule = () => {
     const element = document.getElementById("next-race-section");
@@ -46,18 +74,17 @@ const HeroSection = () => {
       
       {/* --- BACKGROUND VIDEO --- */}
       <div className="absolute inset-0 z-0">
-        {/* 
-           We use standard HTML video tag here. 
-           muted + autoPlay is required for browsers to allow background video.
-        */}
         <video
+          ref={bgVideoRef}
+          className="w-full h-full object-cover opacity-40 pointer-events-none"
+          // React sometimes misses these attributes on hydration, 
+          // so we also enforce them in the useEffect above.
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-40 pointer-events-none"
         >
-          {/* Path matches public/videos/f1-hero.mp4 */}
+          {/* MATCHING YOUR GITHUB PATH EXACTLY */}
           <source src="/videos/f1-hero.mp4" type="video/mp4" />
         </video>
       </div>
@@ -92,7 +119,6 @@ const HeroSection = () => {
               
               <DialogContent className="w-[95vw] h-[90vh] max-w-none bg-black/95 border-red-900 text-white flex flex-col p-0 gap-0">
                 
-                {/* Header */}
                 <DialogHeader className="p-6 border-b border-white/10 bg-black">
                   <DialogTitle className="text-2xl font-bold flex items-center gap-2">
                     <Film className="text-red-600" /> 
@@ -100,19 +126,14 @@ const HeroSection = () => {
                   </DialogTitle>
                 </DialogHeader>
                 
-                {/* Body */}
                 <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
                   
-                  {/* 1. VIDEO PLAYER AREA */}
+                  {/* VIDEO PLAYER */}
                   <div className="flex-1 bg-black/50 flex items-center justify-center p-4 bg-[#050505]">
                     <div className="w-full h-full relative flex items-center justify-center rounded-lg overflow-hidden border border-white/10">
-                      {/* 
-                          IMPORTANT: key={currentVideo.id} tells React to destroy 
-                          and recreate this video tag when the ID changes. 
-                          This fixes the issue where the video wouldn't change.
-                      */}
                       <video
-                        key={currentVideo.id}
+                        ref={modalVideoRef}
+                        key={currentVideo.id} // Forces React to re-render video tag on change
                         controls
                         autoPlay
                         className="max-w-full max-h-full w-auto h-auto object-contain shadow-2xl"
@@ -123,7 +144,7 @@ const HeroSection = () => {
                     </div>
                   </div>
 
-                  {/* 2. PLAYLIST SIDEBAR */}
+                  {/* PLAYLIST */}
                   <div className="w-full md:w-80 border-l border-white/10 bg-[#0a0a0a] p-4 flex flex-col gap-3 overflow-y-auto">
                     <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
                       Up Next
@@ -153,7 +174,7 @@ const HeroSection = () => {
               </DialogContent>
             </Dialog>
 
-            {/* --- VIEW SCHEDULE BUTTON --- */}
+            {/* --- SCHEDULE BUTTON --- */}
             <Button 
               size="lg" 
               variant="outline" 
