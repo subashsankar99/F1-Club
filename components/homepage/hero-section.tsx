@@ -12,49 +12,61 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+// --- IMPORTANT CONFIGURATION ---
+// If your site URL is "username.github.io/F1-Club", change this to "/F1-Club"
+// If you are using Vercel or localhost, keep this empty ""
+const REPO_PREFIX = "/F1-Club"; 
+
+// Helper function to fix paths
+const getPath = (path: string) => {
+  // Remove double slashes if prefix exists
+  const cleanPath = path.startsWith("/") ? path : `/${path}`;
+  return `${REPO_PREFIX}${cleanPath}`;
+};
+
 // --- DATA ---
 const HIGHLIGHT_VIDEOS = [
   {
     id: "1",
     title: "F1 Highlights",
-    src: "/videos/highlights/video1.mp4", 
+    src: getPath("/videos/highlights/video1.mp4"), 
   },
   {
     id: "2",
     title: "Overtakes",
-    src: "/videos/highlights/video2.mp4",
+    src: getPath("/videos/highlights/video2.mp4"),
   },
   {
     id: "3",
     title: "Best Moments",
-    src: "/videos/highlights/video3.mp4",
+    src: getPath("/videos/highlights/video3.mp4"),
   },
 ];
 
 const HeroSection = () => {
   const [currentVideo, setCurrentVideo] = useState(HIGHLIGHT_VIDEOS[0]);
   
-  // Refs to control the videos directly
   const bgVideoRef = useRef<HTMLVideoElement>(null);
   const modalVideoRef = useRef<HTMLVideoElement>(null);
 
-  // 1. FORCE BACKGROUND VIDEO TO PLAY
+  // --- FIX: FORCE AUTOPLAY ---
   useEffect(() => {
     const bgVideo = bgVideoRef.current;
     if (bgVideo) {
-      // Browsers require these specific settings to allow autoplay
       bgVideo.muted = true;
       bgVideo.defaultMuted = true;
       bgVideo.playsInline = true;
       
-      // Try to play, catch any browser errors
       bgVideo.play().catch((error) => {
-        console.log("Background video autoplay blocked:", error);
+        console.log("Autoplay prevented:", error);
+        // Fallback
+        bgVideo.muted = true;
+        bgVideo.play();
       });
     }
   }, []);
 
-  // 2. RELOAD MODAL VIDEO WHEN SWITCHING
+  // --- FIX: RELOAD MODAL VIDEO ---
   useEffect(() => {
     if (modalVideoRef.current) {
       modalVideoRef.current.load();
@@ -77,15 +89,13 @@ const HeroSection = () => {
         <video
           ref={bgVideoRef}
           className="w-full h-full object-cover opacity-40 pointer-events-none"
-          // React sometimes misses these attributes on hydration, 
-          // so we also enforce them in the useEffect above.
           autoPlay
           loop
           muted
           playsInline
         >
-          {/* MATCHING YOUR GITHUB PATH EXACTLY */}
-          <source src="/videos/f1-hero.mp4" type="video/mp4" />
+          {/* USES THE FIXED PATH */}
+          <source src={getPath("/videos/f1-hero.mp4")} type="video/mp4" />
         </video>
       </div>
       
@@ -108,7 +118,7 @@ const HeroSection = () => {
 
           <div className="flex gap-4 justify-center flex-wrap">
             
-            {/* --- WATCH HIGHLIGHTS (MODAL) --- */}
+            {/* --- MODAL --- */}
             <Dialog>
               <DialogTrigger asChild>
                 <Button size="lg" className="bg-red-600 hover:bg-red-700">
@@ -133,13 +143,12 @@ const HeroSection = () => {
                     <div className="w-full h-full relative flex items-center justify-center rounded-lg overflow-hidden border border-white/10">
                       <video
                         ref={modalVideoRef}
-                        key={currentVideo.id} // Forces React to re-render video tag on change
+                        key={currentVideo.id} 
                         controls
                         autoPlay
                         className="max-w-full max-h-full w-auto h-auto object-contain shadow-2xl"
                       >
                         <source src={currentVideo.src} type="video/mp4" />
-                        Your browser does not support the video tag.
                       </video>
                     </div>
                   </div>
@@ -174,7 +183,6 @@ const HeroSection = () => {
               </DialogContent>
             </Dialog>
 
-            {/* --- SCHEDULE BUTTON --- */}
             <Button 
               size="lg" 
               variant="outline" 
