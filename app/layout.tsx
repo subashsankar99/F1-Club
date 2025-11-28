@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/navigation";
-import Link from "next/link"; // Imported Link
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +18,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark scroll-smooth"> 
-      {/* Added 'scroll-smooth' class above for smooth scrolling effect */}
       <body className={inter.className}>
         <Navigation />
         <main className="min-h-screen">
@@ -36,38 +35,34 @@ export default function RootLayout({
               <div>
                 <h4 className="font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  {/* Use Link for internal navigation */}
-                  <li><Link href="/teams" className="hover:text-foreground">Teams</Link></li>
-                  <li><Link href="/drivers" className="hover:text-foreground">Drivers</Link></li>
-                  <li><Link href="/circuits" className="hover:text-foreground">Circuits</Link></li>
+                  {/* ADDED /F1-Club prefix to these links */}
+                  <li><Link href="/F1-Club/teams" className="hover:text-foreground">Teams</Link></li>
+                  <li><Link href="/F1-Club/drivers" className="hover:text-foreground">Drivers</Link></li>
+                  <li><Link href="/F1-Club/circuits" className="hover:text-foreground">Circuits</Link></li>
                 </ul>
               </div>
               
-              {/* --- UPDATED SECTION --- */}
               <div>
                 <h4 className="font-semibold mb-4">Resources</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  {/* 1. Schedule -> Next Race Section */}
+                  {/* ADDED /F1-Club prefix to these anchor links */}
                   <li>
-                    <Link href="/#next-race-section" className="hover:text-foreground">
+                    <Link href="/F1-Club/#next-race-section" className="hover:text-foreground">
                       Schedule
                     </Link>
                   </li>
-                  {/* 2. Standings -> Countdown Section */}
                   <li>
-                    <Link href="/#countdown-section" className="hover:text-foreground">
+                    <Link href="/F1-Club/#countdown-section" className="hover:text-foreground">
                       Standings
                     </Link>
                   </li>
-                  {/* 3. News -> Latest News Section */}
                   <li>
-                    <Link href="/#latest-news-section" className="hover:text-foreground">
+                    <Link href="/F1-Club/#latest-news-section" className="hover:text-foreground">
                       News
                     </Link>
                   </li>
                 </ul>
               </div>
-              {/* ----------------------- */}
 
               <div>
                 <h4 className="font-semibold mb-4">Follow Us</h4>
