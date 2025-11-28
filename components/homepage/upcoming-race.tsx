@@ -24,18 +24,17 @@ const UpcomingRace = () => {
   const gpName = `${nextRace.country.toUpperCase()} GP`;
 
   return (
-    // ADD THE ID HERE ↓ ("next-race-section")
     <section id="next-race-section" className="py-10 container mx-auto">
       <Card className="overflow-hidden bg-black border-gray-800">
         <CardHeader>
           <CardTitle className="text-white">Next Race</CardTitle>
         </CardHeader>
         <CardContent className="p-0">
-            {/* ... Keep the rest of your existing JSX exactly the same ... */}
             <div className="grid md:grid-cols-2 gap-0">
                 {/* Left Side Image */}
                 <div className="relative h-80 md:h-auto min-h-[300px] bg-[#121212] group overflow-hidden flex items-center justify-center">
                     <Image
+                    // This automatically uses the path from circuits.ts (e.g., /F1-Club/circuits/qatar.png)
                     src={nextRace.imagePath} 
                     alt={nextRace.name}
                     fill
@@ -86,8 +85,10 @@ const UpcomingRace = () => {
                             <p className="text-2xl font-bold text-white">{nextRace.raceDistance} km</p>
                         </div>
                     </div>
+                    
+                    {/* FIXED LINK PATH BELOW */}
                     <Link 
-                    href={`/circuits?open=${nextRace.id}&returnTo=/`} 
+                    href={`/F1-Club/circuits?open=${nextRace.id}&returnTo=/F1-Club/`} 
                     className="block w-full"
                     >
                     <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
