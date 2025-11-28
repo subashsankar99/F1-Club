@@ -35,29 +35,29 @@ export default function RootLayout({
               <div>
                 <h4 className="font-semibold mb-4">Quick Links</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  {/* ADDED /F1-Club prefix to these links */}
-                  <li><Link href="/F1-Club/teams" className="hover:text-foreground">Teams</Link></li>
-                  <li><Link href="/F1-Club/drivers" className="hover:text-foreground">Drivers</Link></li>
-                  <li><Link href="/F1-Club/circuits" className="hover:text-foreground">Circuits</Link></li>
+                  {/* FIXED: Removed /F1-Club prefix because basePath handles it */}
+                  <li><Link href="/teams" className="hover:text-foreground">Teams</Link></li>
+                  <li><Link href="/drivers" className="hover:text-foreground">Drivers</Link></li>
+                  <li><Link href="/circuits" className="hover:text-foreground">Circuits</Link></li>
                 </ul>
               </div>
               
               <div>
                 <h4 className="font-semibold mb-4">Resources</h4>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  {/* ADDED /F1-Club prefix to these anchor links */}
+                  {/* FIXED: Removed /F1-Club prefix */}
                   <li>
-                    <Link href="/F1-Club/#next-race-section" className="hover:text-foreground">
+                    <Link href="/#next-race-section" className="hover:text-foreground">
                       Schedule
                     </Link>
                   </li>
                   <li>
-                    <Link href="/F1-Club/#countdown-section" className="hover:text-foreground">
+                    <Link href="/#countdown-section" className="hover:text-foreground">
                       Standings
                     </Link>
                   </li>
                   <li>
-                    <Link href="/F1-Club/#latest-news-section" className="hover:text-foreground">
+                    <Link href="/#latest-news-section" className="hover:text-foreground">
                       News
                     </Link>
                   </li>
