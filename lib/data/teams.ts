@@ -1,3 +1,7 @@
+// 1. DEFINE THE PREFIX
+// This automatically checks if you are building for production (GitHub) or running locally.
+const prefix = process.env.NODE_ENV === "production" ? "/F1-Club" : "";
+
 export interface Team {
   id: string;
   name: string;
@@ -52,8 +56,9 @@ export const teams: Team[] = [
     drivers: ["Max Verstappen", "Liam Lawson"],
     points: 860,
     position: 1,
-    logo: "/logos/red-bull.png",
-    videoPath: "/videos/teams/red-bull.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/red-bull.png`,
+    videoPath: `${prefix}/videos/teams/red-bull.mp4`,
     description: "The dominant force in modern F1, Red Bull Racing has redefined excellence with cutting-edge aerodynamics and exceptional driver talent.",
     carSpecs: {
       engine: "Honda RBPT RA624H V6 Turbo Hybrid",
@@ -83,8 +88,9 @@ export const teams: Team[] = [
     drivers: ["Charles Leclerc", "Lewis Hamilton"],
     points: 652,
     position: 2,
-    logo: "/logos/ferrari.png",
-    videoPath: "/videos/teams/ferrari.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/ferrari.png`,
+    videoPath: `${prefix}/videos/teams/ferrari.mp4`,
     description: "The most iconic team in F1 history, Ferrari represents passion, tradition, and Italian excellence in motorsport.",
     carSpecs: {
       engine: "Ferrari 066/12 V6 Turbo Hybrid",
@@ -114,8 +120,9 @@ export const teams: Team[] = [
     drivers: ["George Russell", "Andrea Kimi Antonelli"],
     points: 584,
     position: 3,
-    logo: "/logos/mercedes.png",
-    videoPath: "/videos/teams/mercedes.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/mercedes.png`,
+    videoPath: `${prefix}/videos/teams/mercedes.mp4`,
     description: "The Silver Arrows have dominated the hybrid era with unprecedented success and engineering excellence.",
     carSpecs: {
       engine: "Mercedes-AMG F1 M15 V6 Turbo Hybrid",
@@ -145,8 +152,9 @@ export const teams: Team[] = [
     drivers: ["Lando Norris", "Oscar Piastri"],
     points: 528,
     position: 4,
-    logo: "/logos/mclaren.png",
-    videoPath: "/videos/teams/mclaren.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/mclaren.png`,
+    videoPath: `${prefix}/videos/teams/mclaren.mp4`,
     description: "A legendary team returning to form, McLaren combines rich heritage with innovative technology.",
     carSpecs: {
       engine: "Mercedes-AMG F1 M15 V6 Turbo Hybrid",
@@ -176,8 +184,9 @@ export const teams: Team[] = [
     drivers: ["Fernando Alonso", "Lance Stroll"],
     points: 462,
     position: 5,
-    logo: "/logos/aston-martin.png",
-    videoPath: "/videos/teams/aston-martin.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/aston-martin.png`,
+    videoPath: `${prefix}/videos/teams/aston-martin.mp4`,
     description: "British luxury and racing heritage combined with modern F1 ambition and significant investment.",
     carSpecs: {
       engine: "Mercedes-AMG F1 M15 V6 Turbo Hybrid",
@@ -207,8 +216,9 @@ export const teams: Team[] = [
     drivers: ["Pierre Gasly", "Jack Doohan"],
     points: 398,
     position: 6,
-    logo: "/logos/alpine.png",
-    videoPath: "/videos/teams/alpine.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/alpine.png`,
+    videoPath: `${prefix}/videos/teams/alpine.mp4`,
     description: "French flair meets racing pedigree in this ambitious team with a rich Formula 1 history.",
     carSpecs: {
       engine: "Renault E-Tech RE24 V6 Turbo Hybrid",
@@ -238,8 +248,9 @@ export const teams: Team[] = [
     drivers: ["Alexander Albon", "Carlos Sainz"],
     points: 287,
     position: 7,
-    logo: "/logos/williams.png",
-    videoPath: "/videos/teams/williams.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/williams.png`,
+    videoPath: `${prefix}/videos/teams/williams.mp4`,
     description: "One of F1's most successful teams, Williams is rebuilding towards former glory with fresh leadership.",
     carSpecs: {
       engine: "Mercedes-AMG F1 M15 V6 Turbo Hybrid",
@@ -269,8 +280,9 @@ export const teams: Team[] = [
     drivers: ["Yuki Tsunoda", "Isack Hadjar"],
     points: 215,
     position: 8,
-    logo: "/logos/rb.png",
-    videoPath: "/videos/teams/rb.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/rb.png`,
+    videoPath: `${prefix}/videos/teams/rb.mp4`,
     description: "Red Bull's sister team serves as a proving ground for young talent and innovative development.",
     carSpecs: {
       engine: "Honda RBPT RA624H V6 Turbo Hybrid",
@@ -300,8 +312,9 @@ export const teams: Team[] = [
     drivers: ["Esteban Ocon", "Oliver Bearman"],
     points: 172,
     position: 9,
-    logo: "/logos/haas.png",
-    videoPath: "/videos/teams/haas.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/haas.png`,
+    videoPath: `${prefix}/videos/teams/haas.mp4`,
     description: "America's F1 team brings a unique approach to Grand Prix racing with cost-effective innovation.",
     carSpecs: {
       engine: "Ferrari 066/12 V6 Turbo Hybrid",
@@ -331,8 +344,9 @@ export const teams: Team[] = [
     drivers: ["Nico Hülkenberg", "Gabriel Bortoleto"],
     points: 148,
     position: 10,
-    logo: "/logos/sauber.png",
-    videoPath: "/videos/teams/sauber.mp4",
+    // ✅ FIXED PATHS
+    logo: `${prefix}/logos/sauber.png`,
+    videoPath: `${prefix}/videos/teams/sauber.mp4`,
     description: "Swiss precision engineering meets motorsport heritage in this experienced F1 constructor.",
     carSpecs: {
       engine: "Ferrari 066/12 V6 Turbo Hybrid",
