@@ -42,27 +42,7 @@ export default function RootLayout({
                 </ul>
               </div>
               
-              <div>
-                <h4 className="font-semibold mb-4">Resources</h4>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  {/* FIXED: Removed /F1-Club prefix */}
-                  <li>
-                    <Link href="next-race-section" className="hover:text-foreground">
-                      Schedule
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="countdown-section" className="hover:text-foreground">
-                      Standings
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="latest-news-section" className="hover:text-foreground">
-                      News
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              
 
               <div>
                 <h4 className="font-semibold mb-4">Follow Us</h4>
