@@ -42,7 +42,7 @@ export const circuits: Circuit[] = [
       driver: "Pedro de la Rosa",
       year: 2005,
     },
-    imagePath: "/circuits/bahrain.png",
+    imagePath: "/F1-Club/circuits/bahrain.png", // FIXED
     description: "A desert track known for its dramatic floodlit night racing and challenging mix of high-speed straights and tight technical sections.",
     raceDate: "2025-03-02",
     status: "completed",
@@ -70,7 +70,7 @@ export const circuits: Circuit[] = [
       driver: "Lewis Hamilton",
       year: 2021,
     },
-    imagePath: "/circuits/jeddah.png",
+    imagePath: "/F1-Club/circuits/jeddah.png", // FIXED
     description: "The fastest street circuit in F1, featuring high-speed corners and spectacular racing along the Red Sea waterfront.",
     raceDate: "2025-03-09",
     status: "completed",
@@ -98,7 +98,7 @@ export const circuits: Circuit[] = [
       driver: "Charles Leclerc",
       year: 2024,
     },
-    imagePath: "/circuits/melbourne.png",
+    imagePath: "/F1-Club/circuits/melbourne.png", // FIXED
     description: "A picturesque semi-street circuit set in a park, offering high speeds and technical challenges with limited overtaking opportunities.",
     raceDate: "2025-03-16",
     status: "completed",
@@ -126,7 +126,7 @@ export const circuits: Circuit[] = [
       driver: "Lewis Hamilton",
       year: 2019,
     },
-    imagePath: "/circuits/suzuka.png",
+    imagePath: "/F1-Club/circuits/suzuka.png", // FIXED
     description: "A legendary figure-eight circuit beloved by drivers for its technical challenge and iconic corners like 130R and Spoon Curve.",
     raceDate: "2025-04-06",
     status: "completed",
@@ -154,7 +154,7 @@ export const circuits: Circuit[] = [
       driver: "Michael Schumacher",
       year: 2004,
     },
-    imagePath: "/circuits/shanghai.png",
+    imagePath: "/F1-Club/circuits/shanghai.png", // FIXED
     description: "An innovative Hermann Tilke design featuring the spectacular uphill Section 1-2 complex and a long back straight.",
     raceDate: "2025-04-20",
     status: "completed",
@@ -182,7 +182,7 @@ export const circuits: Circuit[] = [
       driver: "Max Verstappen",
       year: 2023,
     },
-    imagePath: "/circuits/miami.png",
+    imagePath: "/F1-Club/circuits/miami.png", // FIXED
     description: "A modern street circuit around Hard Rock Stadium bringing F1 action to South Beach with American spectacle and entertainment.",
     raceDate: "2025-05-04",
     status: "completed",
@@ -210,7 +210,7 @@ export const circuits: Circuit[] = [
       driver: "Lewis Hamilton",
       year: 2020,
     },
-    imagePath: "/circuits/imola.png",
+    imagePath: "/F1-Club/circuits/imola.png", // FIXED
     description: "A historic old-school circuit with passionate tifosi, challenging corners like Tamburello and Rivazza, and limited run-off areas.",
     raceDate: "2025-05-18",
     status: "completed",
@@ -238,7 +238,7 @@ export const circuits: Circuit[] = [
       driver: "Lewis Hamilton",
       year: 2021,
     },
-    imagePath: "/circuits/monaco.png",
+    imagePath: "/F1-Club/circuits/monaco.png", // FIXED
     description: "F1's crown jewel - a narrow street circuit through Monte Carlo where precision and concentration are paramount.",
     raceDate: "2025-05-25",
     status: "completed",
@@ -266,7 +266,7 @@ export const circuits: Circuit[] = [
       driver: "Max Verstappen",
       year: 2023,
     },
-    imagePath: "/circuits/barcelona.png",
+    imagePath: "/F1-Club/circuits/barcelona.png", // FIXED
     description: "A complete test of car and driver featuring slow, medium, and high-speed corners. Teams know every inch from winter testing.",
     raceDate: "2025-06-01",
     status: "completed",
@@ -294,7 +294,7 @@ export const circuits: Circuit[] = [
       driver: "Valtteri Bottas",
       year: 2019,
     },
-    imagePath: "/circuits/montreal.png",
+    imagePath: "/F1-Club/circuits/montreal.png", // FIXED
     description: "A fast semi-permanent circuit on Île Notre-Dame featuring heavy braking zones and the famous Wall of Champions.",
     raceDate: "2025-06-15",
     status: "completed",
@@ -322,7 +322,7 @@ export const circuits: Circuit[] = [
       driver: "Carlos Sainz",
       year: 2020,
     },
-    imagePath: "/circuits/austria.png",
+    imagePath: "/F1-Club/circuits/austria.png", // FIXED
     description: "A short, fast track set in the Styrian mountains with significant elevation changes and good overtaking spots.",
     raceDate: "2025-06-29",
     status: "completed",
@@ -349,7 +349,7 @@ export const circuits: Circuit[] = [
       driver: "Max Verstappen",
       year: 2020,
     },
-    imagePath: "/circuits/silverstone.png",
+    imagePath: "/F1-Club/circuits/silverstone.png", // FIXED
     description: "The home of British motorsport, famous for high-speed sequences like Maggotts and Becketts that test aero performance.",
     raceDate: "2025-07-06",
     status: "completed",
@@ -376,7 +376,7 @@ export const circuits: Circuit[] = [
       driver: "Lewis Hamilton",
       year: 2020,
     },
-    imagePath: "/circuits/spa.png",
+    imagePath: "/F1-Club/circuits/spa.png", // FIXED
     description: "The longest track on the calendar, featuring the iconic Eau Rouge-Raidillon complex and unpredictable microclimates.",
     raceDate: "2025-07-27",
     status: "completed",
@@ -403,7 +403,7 @@ export const circuits: Circuit[] = [
       driver: "Lewis Hamilton",
       year: 2020,
     },
-    imagePath: "/circuits/hungary.png",
+    imagePath: "/F1-Club/circuits/hungary.png", // FIXED
     description: "Often called 'Monaco without the walls', a tight and twisty track where qualifying position is crucial.",
     raceDate: "2025-08-03",
     status: "completed",
@@ -430,7 +430,7 @@ export const circuits: Circuit[] = [
       driver: "Lewis Hamilton",
       year: 2021,
     },
-    imagePath: "/circuits/zandvoort.AVIF",
+    imagePath: "/F1-Club/circuits/zandvoort.AVIF", // FIXED
     description: "An old-school track flowing through sand dunes featuring unique banked corners at Turn 3 and the final Turn 14.",
     raceDate: "2025-08-31",
     status: "completed",
@@ -457,7 +457,7 @@ export const circuits: Circuit[] = [
       driver: "Rubens Barrichello",
       year: 2004,
     },
-    imagePath: "/circuits/monza.png",
+    imagePath: "/F1-Club/circuits/monza.png", // FIXED
     description: "The 'Temple of Speed', featuring long straights and heavy braking zones where cars reach the highest speeds of the year.",
     raceDate: "2025-09-07",
     status: "completed",
@@ -484,7 +484,7 @@ export const circuits: Circuit[] = [
       driver: "Charles Leclerc",
       year: 2019,
     },
-    imagePath: "/circuits/baku.png",
+    imagePath: "/F1-Club/circuits/baku.png", // FIXED
     description: "A mix of wide, ultra-fast straights and the incredibly narrow castle section in the old city.",
     raceDate: "2025-09-21",
     status: "completed",
@@ -511,7 +511,7 @@ export const circuits: Circuit[] = [
       driver: "Lewis Hamilton",
       year: 2023,
     },
-    imagePath: "/circuits/singapore.png",
+    imagePath: "/F1-Club/circuits/singapore.png", // FIXED
     description: "The original night race, a physically demanding street circuit with high humidity and bumpy surfaces.",
     raceDate: "2025-10-05",
     status: "completed",
@@ -538,7 +538,7 @@ export const circuits: Circuit[] = [
       driver: "Charles Leclerc",
       year: 2019,
     },
-    imagePath: "/circuits/austin.png",
+    imagePath: "/F1-Club/circuits/austin.png", // FIXED
     description: "A fan favorite featuring a steep uphill run to Turn 1 and a layout inspired by the best corners from other tracks.",
     raceDate: "2025-10-19",
     status: "completed",
@@ -565,7 +565,7 @@ export const circuits: Circuit[] = [
       driver: "Valtteri Bottas",
       year: 2021,
     },
-    imagePath: "/circuits/mexico.png",
+    imagePath: "/F1-Club/circuits/mexico.png", // FIXED
     description: "Located at high altitude, where thin air affects aerodynamics and engine cooling. Features a stadium section filled with fans.",
     raceDate: "2025-10-26",
     status: "completed",
@@ -592,7 +592,7 @@ export const circuits: Circuit[] = [
       driver: "Valtteri Bottas",
       year: 2018,
     },
-    imagePath: "/circuits/brazil.png",
+    imagePath: "/F1-Club/circuits/brazil.png", // FIXED
     description: "Interlagos is a classic anti-clockwise track famous for unpredictable weather and dramatic title deciders.",
     raceDate: "2025-11-09",
     status: "completed",
@@ -619,7 +619,7 @@ export const circuits: Circuit[] = [
       driver: "Oscar Piastri",
       year: 2023,
     },
-    imagePath: "/circuits/vegas.png",
+    imagePath: "/F1-Club/circuits/vegas.png", // FIXED
     description: "A spectacular night race down the famous Las Vegas Strip, featuring long straights and high speeds.",
     raceDate: "2025-11-22",
     status: "completed",
@@ -629,7 +629,7 @@ export const circuits: Circuit[] = [
       { year: 2023, driver: "Max Verstappen", team: "Red Bull Racing" },
     ],
   },
-  // 23. Qatar (Upcoming - No 2025 winner provided)
+  // 23. Qatar (Upcoming)
   {
     id: "qatar",
     name: "Lusail International Circuit",
@@ -646,7 +646,7 @@ export const circuits: Circuit[] = [
       driver: "Max Verstappen",
       year: 2023,
     },
-    imagePath: "/circuits/qatar.png",
+    imagePath: "/F1-Club/circuits/qatar.png", // FIXED
     description: "A fast and flowing track primarily designed for MotoGP, demanding high downforce and punishing on tires.",
     raceDate: "2025-11-30",
     status: "upcoming",
@@ -655,7 +655,7 @@ export const circuits: Circuit[] = [
       { year: 2023, driver: "Max Verstappen", team: "Red Bull Racing" },
     ],
   },
-  // 24. Abu Dhabi (Upcoming - No 2025 winner provided)
+  // 24. Abu Dhabi (Upcoming)
   {
     id: "abu-dhabi",
     name: "Yas Marina Circuit",
@@ -672,7 +672,7 @@ export const circuits: Circuit[] = [
       driver: "Max Verstappen",
       year: 2021,
     },
-    imagePath: "/circuits/abudhabi.png",
+    imagePath: "/F1-Club/circuits/abudhabi.png", // FIXED
     description: "The traditional season finale held at twilight, featuring a mix of long straights and technical marina sections.",
     raceDate: "2025-12-07",
     status: "upcoming",
