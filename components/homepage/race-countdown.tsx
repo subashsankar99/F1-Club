@@ -14,6 +14,7 @@ const RaceCountdown = () => {
     minutes: 0,
     seconds: 0,
   });
+  
 
   const [isSeasonOver, setIsSeasonOver] = useState(false);
 
