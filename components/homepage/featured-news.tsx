@@ -5,7 +5,7 @@ import { ArrowRight, Calendar, Trophy, Cpu, Mic } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image"; 
 
-// --- IMPORTS ---
+// --- IMPORTS (Make sure these file names match exactly what is in your folder) ---
 import img1 from "./max verstappen.jpg";
 import img2 from "./Ferrari.jpg"; 
 import img3 from "./Lewis Hamilton.jpg"; 
@@ -42,7 +42,7 @@ const FeaturedNews = () => {
   ];
 
   return (
-    // --- ADD THE ID HERE ↓ ---
+    // --- ID ADDED HERE TO FIX NAVIGATION ---
     <section id="latest-news-section" className="w-full py-8">
       <div className="flex items-center justify-between mb-8">
         <h2 className="text-3xl font-bold tracking-tight">Latest News</h2>
