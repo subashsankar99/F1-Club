@@ -6,7 +6,6 @@ import { Clock, Trophy } from "lucide-react";
 import { circuits } from "@/lib/data/circuits"; 
 
 const RaceCountdown = () => {
-  // 1. Dynamic Logic: Find the first circuit with status 'upcoming'
   const nextRaceData = circuits.find((circuit) => circuit.status === "upcoming");
 
   const [timeLeft, setTimeLeft] = useState({
@@ -19,7 +18,6 @@ const RaceCountdown = () => {
   const [isSeasonOver, setIsSeasonOver] = useState(false);
 
   useEffect(() => {
-    // If no upcoming race is found, the season is over
     if (!nextRaceData) {
       setIsSeasonOver(true);
       return;
@@ -52,8 +50,8 @@ const RaceCountdown = () => {
 
   if (isSeasonOver) {
     return (
-      // Added ID here for scrolling
-      <div id="countdown-section" className="w-full">
+      // ✅ ID added here too, so the link works even if season is over
+      <div id="countdown-section" className="w-full mb-8">
         <Card className="border-yellow-600/50 bg-gradient-to-br from-yellow-950/20 to-background">
             <CardHeader>
             <CardTitle className="flex items-center gap-2 text-yellow-500">
@@ -72,7 +70,7 @@ const RaceCountdown = () => {
   }
 
   return (
-    // --- FIX: Added wrapper div with the ID "countdown-section" ---
+    // ✅ ID matches the Footer "Standings" link
     <div id="countdown-section" className="w-full pt-4 pb-8">
       <Card className="border-red-600/50 bg-gradient-to-br from-red-950/20 to-background">
         <CardHeader>
