@@ -10,7 +10,6 @@ import { circuits } from "@/lib/data/circuits";
 const UpcomingRace = () => {
   const nextRace = circuits.find((c) => c.status === "upcoming") || circuits[0];
 
-  // ... (Keep existing logic for dates/winners) ...
   const formattedDate = new Date(nextRace.raceDate).toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
@@ -34,7 +33,6 @@ const UpcomingRace = () => {
                 {/* Left Side Image */}
                 <div className="relative h-80 md:h-auto min-h-[300px] bg-[#121212] group overflow-hidden flex items-center justify-center">
                     <Image
-                    // This automatically uses the path from circuits.ts (e.g., /F1-Club/circuits/qatar.png)
                     src={nextRace.imagePath} 
                     alt={nextRace.name}
                     fill
@@ -86,9 +84,10 @@ const UpcomingRace = () => {
                         </div>
                     </div>
                     
-                    {/* FIXED LINK PATH BELOW */}
+                    {/* --- THIS WAS THE ISSUE --- */}
+                    {/* We removed /F1-Club from here because Next.js adds it automatically */}
                     <Link 
-                    href={`/F1-Club/circuits?open=${nextRace.id}&returnTo=/F1-Club/`} 
+                    href={`/circuits?open=${nextRace.id}&returnTo=/`} 
                     className="block w-full"
                     >
                     <Button className="w-full bg-red-600 hover:bg-red-700 text-white">
