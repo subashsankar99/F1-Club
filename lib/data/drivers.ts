@@ -24,7 +24,7 @@ export interface Driver {
 }
 
 export const drivers: Driver[] = [
-  // --- MCLAREN (The Title Contenders) ---
+  // --- MCLAREN ---
   {
     id: "lando-norris",
     name: "Lando Norris",
@@ -34,14 +34,14 @@ export const drivers: Driver[] = [
     flagCode: "GB",
     dateOfBirth: "1999-11-13",
     placeOfBirth: "Bristol, England",
-    championships: 1, // Hypothetical 2025 Champion
-    raceWins: 10, // 3 previous + 7 new
-    podiums: 42, // 25 previous + ~17 new
+    championships: 1,
+    raceWins: 10,
+    podiums: 42,
     polePositions: 15,
     fastestLaps: 16,
     points: 432,
     position: 1,
-    photo: "/drivers/norris.jpg",
+    photo: "/F1-Club/drivers/norris.jpg", // ADDED /F1-Club
     biography: "In a season for the ages, Lando Norris secured 7 victories and the World Championship, edging out his teammate in a dominant year for McLaren.",
     careerStats: {
       grandsPrixEntered: 147,
@@ -59,13 +59,13 @@ export const drivers: Driver[] = [
     dateOfBirth: "2001-04-06",
     placeOfBirth: "Melbourne, Australia",
     championships: 0,
-    raceWins: 9, // 2 previous + 7 new
-    podiums: 26, // 9 previous + ~17 new
+    raceWins: 9,
+    podiums: 26,
     polePositions: 6,
     fastestLaps: 9,
     points: 425,
     position: 2,
-    photo: "/drivers/piastri.jpg",
+    photo: "/F1-Club/drivers/piastri.jpg", // ADDED /F1-Club
     biography: "Matching his teammate with 7 victories, Oscar Piastri proved himself a generational talent, fighting for the title down to the very last lap.",
     careerStats: {
       grandsPrixEntered: 65,
@@ -85,13 +85,13 @@ export const drivers: Driver[] = [
     dateOfBirth: "1997-09-30",
     placeOfBirth: "Hasselt, Belgium",
     championships: 4,
-    raceWins: 69, // 63 previous + 6 new
-    podiums: 128, // 113 previous + ~15 new
+    raceWins: 69,
+    podiums: 128,
     polePositions: 48,
     fastestLaps: 38,
     points: 390,
     position: 3,
-    photo: "/drivers/verstappen.jpg",
+    photo: "/F1-Club/drivers/verstappen.jpg", // ADDED /F1-Club
     biography: "Despite a valiant effort and 6 victories, Verstappen couldn't hold off the McLaren surge, finishing a respectable third in the standings.",
     careerStats: {
       grandsPrixEntered: 228,
@@ -110,12 +110,12 @@ export const drivers: Driver[] = [
     placeOfBirth: "Hastings, New Zealand",
     championships: 0,
     raceWins: 0,
-    podiums: 2, // Managed a couple of podiums in the RB
+    podiums: 2,
     polePositions: 0,
     fastestLaps: 1,
     points: 115,
     position: 8,
-    photo: "/drivers/lawson.jpg",
+    photo: "/F1-Club/drivers/lawson.jpg", // ADDED /F1-Club
     biography: "A solid first full season for the Kiwi, securing consistent points and his first podiums to help Red Bull secure second in the Constructors'.",
     careerStats: {
       grandsPrixEntered: 33,
@@ -135,13 +135,13 @@ export const drivers: Driver[] = [
     dateOfBirth: "1998-02-15",
     placeOfBirth: "King's Lynn, England",
     championships: 0,
-    raceWins: 4, // 2 previous + 2 new (Canada/Singapore)
-    podiums: 22, // 14 previous + 8 new
+    raceWins: 4,
+    podiums: 22,
     polePositions: 6,
     fastestLaps: 10,
     points: 245,
     position: 4,
-    photo: "/drivers/russell.jpg",
+    photo: "/F1-Club/drivers/russell.jpg", // ADDED /F1-Club
     biography: "Russell led Mercedes admirably with victories in Canada and Singapore, establishing himself as the clear team leader.",
     careerStats: {
       grandsPrixEntered: 147,
@@ -160,12 +160,12 @@ export const drivers: Driver[] = [
     placeOfBirth: "Bologna, Italy",
     championships: 0,
     raceWins: 0,
-    podiums: 1, // Rookie podium
+    podiums: 1,
     polePositions: 0,
     fastestLaps: 0,
     points: 55,
     position: 12,
-    photo: "/drivers/antonelli.jpg",
+    photo: "/F1-Club/drivers/antonelli.jpg", // ADDED /F1-Club
     biography: "The rookie showed flashes of brilliance and raw speed, learning the ropes alongside Russell in a high-pressure environment.",
     careerStats: {
       grandsPrixEntered: 22,
@@ -185,13 +185,13 @@ export const drivers: Driver[] = [
     dateOfBirth: "1997-10-16",
     placeOfBirth: "Monte Carlo, Monaco",
     championships: 0,
-    raceWins: 8, // No wins in 2025 scenario
-    podiums: 50, // 41 previous + 9 new
+    raceWins: 8,
+    podiums: 50,
     polePositions: 30,
     fastestLaps: 12,
     points: 210,
     position: 5,
-    photo: "/drivers/leclerc.jpg",
+    photo: "/F1-Club/drivers/leclerc.jpg", // ADDED /F1-Club
     biography: "A frustrating winless season for Leclerc, though he remained consistent to finish top-five in the standings ahead of his new teammate.",
     careerStats: {
       grandsPrixEntered: 168,
@@ -209,13 +209,13 @@ export const drivers: Driver[] = [
     dateOfBirth: "1985-01-07",
     placeOfBirth: "Stevenage, England",
     championships: 7,
-    raceWins: 105, // No wins in 2025 scenario
-    podiums: 206, // 201 previous + 5 new
+    raceWins: 105,
+    podiums: 206,
     polePositions: 105,
     fastestLaps: 69,
     points: 195,
     position: 6,
-    photo: "/drivers/hamilton.jpg",
+    photo: "/F1-Club/drivers/hamilton.jpg", // ADDED /F1-Club
     biography: "Hamilton's debut season in red was one of adaptation. While winless, his experience helped Ferrari gather crucial data for 2026.",
     careerStats: {
       grandsPrixEntered: 375,
@@ -236,12 +236,12 @@ export const drivers: Driver[] = [
     placeOfBirth: "Madrid, Spain",
     championships: 0,
     raceWins: 4,
-    podiums: 26, // 25 previous + 1 new (surprise podium)
+    podiums: 26,
     polePositions: 6,
     fastestLaps: 4,
     points: 105,
     position: 7,
-    photo: "/drivers/sainz.jpg",
+    photo: "/F1-Club/drivers/sainz.jpg", // ADDED /F1-Club
     biography: "Sainz was the standout performer of the midfield, dragging the Williams to a surprise podium and consistently scoring points.",
     careerStats: {
       grandsPrixEntered: 228,
@@ -265,7 +265,7 @@ export const drivers: Driver[] = [
     fastestLaps: 0,
     points: 58,
     position: 11,
-    photo: "/drivers/albon.jpg",
+    photo: "/F1-Club/drivers/albon.jpg", // ADDED /F1-Club
     biography: "Forming a potent partnership with Sainz, Albon helped Williams secure 5th in the Constructors' Championship.",
     careerStats: {
       grandsPrixEntered: 126,
@@ -286,12 +286,12 @@ export const drivers: Driver[] = [
     placeOfBirth: "Oviedo, Spain",
     championships: 2,
     raceWins: 32,
-    podiums: 108, // Added 2 podiums
+    podiums: 108,
     polePositions: 22,
     fastestLaps: 27,
     points: 92,
     position: 9,
-    photo: "/drivers/alonso.jpg",
+    photo: "/F1-Club/drivers/alonso.jpg", // ADDED /F1-Club
     biography: "The veteran fought hard in the midfield, squeezing every ounce of performance from the AMR25 to finish inside the top 10.",
     careerStats: {
       grandsPrixEntered: 421,
@@ -315,7 +315,7 @@ export const drivers: Driver[] = [
     fastestLaps: 0,
     points: 28,
     position: 14,
-    photo: "/drivers/stroll.jpg",
+    photo: "/F1-Club/drivers/stroll.jpg", // ADDED /F1-Club
     biography: "A difficult season for Stroll, struggling to match his teammate's consistency in a tightly contested midfield battle.",
     careerStats: {
       grandsPrixEntered: 188,
@@ -341,7 +341,7 @@ export const drivers: Driver[] = [
     fastestLaps: 3,
     points: 60,
     position: 10,
-    photo: "/drivers/gasly.jpg",
+    photo: "/F1-Club/drivers/gasly.jpg", // ADDED /F1-Club
     biography: "Gasly outperformed the car for much of the season, leading Alpine's efforts with several impressive Q3 appearances.",
     careerStats: {
       grandsPrixEntered: 175,
@@ -365,7 +365,7 @@ export const drivers: Driver[] = [
     fastestLaps: 0,
     points: 12,
     position: 18,
-    photo: "/drivers/doohan.jpg",
+    photo: "/F1-Club/drivers/doohan.jpg", // ADDED /F1-Club
     biography: "A learning year for the Australian rookie, showing improved pace in the second half of the season.",
     careerStats: {
       grandsPrixEntered: 22,
@@ -391,7 +391,7 @@ export const drivers: Driver[] = [
     fastestLaps: 2,
     points: 45,
     position: 13,
-    photo: "/drivers/tsunoda.jpg",
+    photo: "/F1-Club/drivers/tsunoda.jpg", // ADDED /F1-Club
     biography: "Tsunoda continued to be the rock for RB, scoring the majority of the team's points with aggressive drives.",
     careerStats: {
       grandsPrixEntered: 109,
@@ -415,7 +415,7 @@ export const drivers: Driver[] = [
     fastestLaps: 0,
     points: 6,
     position: 19,
-    photo: "/drivers/hadjar.jpg",
+    photo: "/F1-Club/drivers/hadjar.jpg", // ADDED /F1-Club
     biography: "Hadjar had a fiery debut season, showing raw speed but suffering from rookie errors and reliability issues.",
     careerStats: {
       grandsPrixEntered: 22,
@@ -441,7 +441,7 @@ export const drivers: Driver[] = [
     fastestLaps: 2,
     points: 22,
     position: 15,
-    photo: "/drivers/hulkenberg.jpg",
+    photo: "/F1-Club/drivers/hulkenberg.jpg", // ADDED /F1-Club
     biography: "Hülkenberg provided the stability Sauber needed, regularly qualifying well even if race pace was lacking.",
     careerStats: {
       grandsPrixEntered: 249,
@@ -465,7 +465,7 @@ export const drivers: Driver[] = [
     fastestLaps: 0,
     points: 4,
     position: 20,
-    photo: "/drivers/bortoleto.jpg",
+    photo: "/F1-Club/drivers/bortoleto.jpg", // ADDED /F1-Club
     biography: "The young Brazilian found the jump to F1 challenging in a difficult car but managed to score his first points in Brazil.",
     careerStats: {
       grandsPrixEntered: 22,
@@ -491,7 +491,7 @@ export const drivers: Driver[] = [
     fastestLaps: 0,
     points: 18,
     position: 16,
-    photo: "/drivers/ocon.jpg",
+    photo: "/F1-Club/drivers/ocon.jpg", // ADDED /F1-Club
     biography: "Ocon's move to Haas brought grit to the team, fighting for the final points positions in a very competitive field.",
     careerStats: {
       grandsPrixEntered: 175,
@@ -515,7 +515,7 @@ export const drivers: Driver[] = [
     fastestLaps: 0,
     points: 15,
     position: 17,
-    photo: "/drivers/bearman.jpg",
+    photo: "/F1-Club/drivers/bearman.jpg", // ADDED /F1-Club
     biography: "Bearman impressed in his full rookie season, nearly matching his experienced teammate on points.",
     careerStats: {
       grandsPrixEntered: 25,
