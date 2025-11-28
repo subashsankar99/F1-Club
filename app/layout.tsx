@@ -47,17 +47,17 @@ export default function RootLayout({
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {/* FIXED: Removed /F1-Club prefix */}
                   <li>
-                    <Link href="/next-race-section" className="hover:text-foreground">
+                    <Link href="next-race-section" className="hover:text-foreground">
                       Schedule
                     </Link>
                   </li>
                   <li>
-                    <Link href="/countdown-section" className="hover:text-foreground">
+                    <Link href="countdown-section" className="hover:text-foreground">
                       Standings
                     </Link>
                   </li>
                   <li>
-                    <Link href="/latest-news-section" className="hover:text-foreground">
+                    <Link href="latest-news-section" className="hover:text-foreground">
                       News
                     </Link>
                   </li>
